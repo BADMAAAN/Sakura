@@ -1,0 +1,20 @@
+{
+  "name": "FluxHAL",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pr3y/Flux.git"
+  },
+  "version": "7.3.1",
+  "authors": {
+    "name": "Flux Firmware",
+    "url": "https://flux.computer"
+  },
+  "export": {
+    "include": ["io_expander", "sd_card"]
+  },
+  "frameworks": "*",
+  "platforms": "*",
+  "build": {
+    "libArchive": false
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "pack_id": "flux-default",
+  "assets": {
+    "branding.firmware_icon": {
+      "status": "ready",
+      "source": "source/branding/flux.icon.source.png",
+      "target": "/flux/assets/branding/flux.icon.png",
+      "format": "png"
+    },
+    "branding.splash": {
+      "status": "ready",
+      "source": "source/branding/flux.boot.source.png",
+      "target": "/flux/assets/branding/flux.splash.png",
+      "format": "png"
+    },
+    "branding.secondary": {
+      "status": "ready",
+      "source": "source/branding/flux.secondary.source.png",
+      "target": "/flux/assets/branding/flux.secondary.png",
+      "format": "png"
+    }
+  },
+  "limits": {
+    "icon_max_bytes": 16384,
+    "runtime_frame_buffer_bytes": 131072,
+    "boot_asset_optional": true
+  }
+}

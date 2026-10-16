@@ -1,0 +1,30 @@
+model_list:
+  - model_name: flux-coder
+    litellm_params:
+      model: ollama/qwen2.5-coder:14b
+      api_base: http://127.0.0.1:11434
+      timeout: 600
+      num_ctx: 32768
+  - model_name: flux-coder-fallback-1
+    litellm_params:
+      model: ollama/qwen2.5:14b
+      api_base: http://127.0.0.1:11434
+      timeout: 600
+      num_ctx: 32768
+  - model_name: flux-coder-fallback-2
+    litellm_params:
+      model: ollama/qwen2.5:latest
+      api_base: http://127.0.0.1:11434
+      timeout: 600
+      num_ctx: 32768
+router_settings:
+  num_retries: 1
+  retry_after: 5
+  timeout: 600
+  allowed_fails: 2
+  cooldown_time: 120
+  fallbacks:
+    - flux-coder: [flux-coder-fallback-1, flux-coder-fallback-2]
+litellm_settings:
+  drop_params: true
+  json_logs: true

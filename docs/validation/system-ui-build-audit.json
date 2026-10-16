@@ -1,0 +1,169 @@
+{
+  "role": "build-engineer",
+  "task_id": "final_ui_artifact_audit",
+  "status": "PASS",
+  "summary": "Final build/application-only, ELF, archive libraries and native preview checks passed; source archive and bare-metal run remain separate root handoffs.",
+  "build": {
+    "status": "PASS",
+    "command": "scripts/build.ps1 -Environment flux-delta -Python C:\\Projects\\FLUX\\.venv\\Scripts\\python.exe",
+    "cwd": "C:\\Projects\\FLUX-DELTA",
+    "environment": {
+      "PLATFORMIO_CORE_DIR": "C:\\Projects\\FLUX-DELTA\\.tools\\platformio-core",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "Python": "3.14.7",
+      "PlatformIO": "6.1.19 with isolated platform penv6.2.0",
+      "platform": "55.3.39",
+      "Arduino": "3.3.9",
+      "framework_libraries": "5.5.4+sha.735507283d",
+      "GCC": "14.2.0+20260121",
+      "esptool_build": "5.3.0"
+    },
+    "log": ".codex/ui-system/build-release.log",
+    "success_duration_seconds": 158.29,
+    "exit_status": "SUCCESS0 as recorded by root/log",
+    "application_capacity_pass": true,
+    "static_ram_bytes": 132968,
+    "linker_flash_bytes": 4318906,
+    "warnings": "Existing upstream ODR/strict-aliasing/ESP8266Audio warnings remain; build succeeds. No warning suppression, dependencies or configuration changed by this specialist."
+  },
+  "artifact_run": {
+    "status": "NOT TESTED",
+    "reason": "Bare-metal ESP32-S3 application requires root-owned device verification; specialist does not access COM or flash."
+  },
+  "preview_artifact_run": {
+    "status": "PASS",
+    "command": "Python3.14.7 ctypes.CDLL(absolute existing tools/delta_preview/delta_system.dll); delta_system_frame for 3 themes x20 scenes",
+    "cwd": "C:\\Windows\\Temp",
+    "frame_count": 60,
+    "distinct_frame_hashes": 60,
+    "dll_sha256": "ed95587cca4ccbafeb517c071d52fe652fcae1bfbf7a62f72c40f84fe110fa26",
+    "limit": "Host DLL only; all current source provenance hashes rechecked. Not firmware execution.",
+    "rechecked_utc": "2026-10-15T19:38:58.728134+00:00"
+  },
+  "library_archive": {
+    "status": "PASS",
+    "path": "artifacts/FLUX-DELTA-LIBRARIES.zip",
+    "size_bytes": 57600377,
+    "sha256": "178b19ca966438c9b147c3ff31b86603a6a05ff7b45c6546c63154401bc4682d",
+    "zip_crc": "PASS",
+    "entries": 5709,
+    "all_archived_files_match_installed": true,
+    "missing_files": [],
+    "different_files": [],
+    "external_library_count": 38,
+    "notes": "39 first path entries includes integrity.dat; libraries themselves=38. Config has floating dependencies; archive and manifest preserve actual snapshots. No upgrade or reinstall performed.",
+    "installed_public_files_missing_from_archive": []
+  },
+  "assets": {
+    "status": "PASS",
+    "elf_one_copy_background": 54400,
+    "elf_one_copy_glyph_alpha": 7410,
+    "elf_one_copy_glyph_advance": 95,
+    "elf_one_copy_palettes": [
+      128,
+      128,
+      128
+    ],
+    "elf_one_copy_icon_alpha": 10400,
+    "instrument_renderers_linked": [
+      "delta::ui::radioResults",
+      "delta::ui::rfGraph"
+    ],
+    "native_captures_hash_verified": 60,
+    "matching_4x_captures_present": 60,
+    "preview_manifest_stale_sources": [],
+    "generated_build_inputs_present": {
+      "include/webFiles.h": 130717,
+      "src/modules/bjs_interpreter/mqjs_stdlib.h": 234802,
+      "lib/mquickjs_headers/mquickjs_atom.h": 2010,
+      "lib/mquickjs_headers/mqjs_stdlib.build.sha256": 64
+    }
+  },
+  "partition": {
+    "factory_address": 65536,
+    "factory_capacity": 4653056,
+    "table_sha256": "8ba38283c69e4f31707e425089152391603a27ab336b94fb27833e46e04d74c0",
+    "status": "PASS"
+  },
+  "changed_files": [
+    ".codex/ui-system/build-audit.json"
+  ],
+  "limits": [
+    "No full build launched by this specialist; root owns final build.",
+    "No hardware flashing, radio operation, serial commands or browser use.",
+    "No source/package mutations outside this evidence JSON.",
+    "Final source archive not yet available for this new implementation."
+  ],
+  "next_handoff": "Root: provide final source archive path; bare-metal app run remains root-owned.",
+  "checks": [
+    "Read build/config/environment/package versions",
+    "ELF nm asset single-copy and production renderer symbols",
+    "ZIP CRC and byte-wise SHA256 comparison of all5709 archived library files",
+    "Native preview DLL from neutral cwd60frames",
+    "PNG manifest hashes60 captures and4x presence",
+    "Final esptool5.4.0 image-info checksum/validation/ESP32-S3 header and embeddedELF hash;18changed source object timestamps; merged offset and delivery copies matched"
+  ],
+  "tools_used": [
+    "exec_command",
+    "write_stdin",
+    "PowerShell",
+    "Pythonstdlib",
+    "ctypes",
+    "xtensa-esp32s3-elf-nm"
+  ],
+  "retries": 0,
+  "recorded_utc": "2026-10-15T19:34:22.155266+00:00",
+  "final_artifact_inspection": {
+    "application": {
+      "path": "C:\\Projects\\FLUX-DELTA\\.pio\\build\\flux-delta\\firmware.bin",
+      "bytes": 4319456,
+      "sha256": "d873c6e66bf6c66a8ae2bc71c16db181f8848e37c4eab8f024149e34df051348",
+      "header_magic": 233,
+      "chip_id": 9,
+      "application_address": 65536,
+      "capacity": 4653056,
+      "headroom": 333600,
+      "erase_end_exclusive": 4386816,
+      "fits": true,
+      "checksum": "valid",
+      "validation_hash": "915af86a325bf2713004ffdb4aac98a85baa18f4e3ee4cc3e36c4489ff941002",
+      "validation_hash_status": "valid",
+      "embedded_elf_hash_matches": true,
+      "flash_mode": "DIO",
+      "flash_mhz": 80,
+      "flash_mb": 16,
+      "idf": "v5.5.4-dirty"
+    },
+    "elf": {
+      "path": "C:\\Projects\\FLUX-DELTA\\.pio\\build\\flux-delta\\firmware.elf",
+      "bytes": 81079664,
+      "sha256": "b4c56a6d61f2805296f0e3a269a0fb8d0c0b5d0e35c055be815010e0c7e213ae"
+    },
+    "merged": {
+      "bytes": 4384992,
+      "app_at_0x10000_equals": true,
+      "factory_app_at_0x10000_equals": true,
+      "must_not_flash_for_application_only": true
+    },
+    "freshness": {
+      "status": "PASS",
+      "baseline": "6ade36dda06bf667bf0084cc403ddb3a7b36af3d",
+      "changed_source_objects_checked": 18,
+      "sources_newer_than_elf_or_object": [],
+      "missing_objects": []
+    },
+    "delivery_application_copies": {
+      "firmware.bin": {
+        "bytes": 4319456,
+        "sha256": "d873c6e66bf6c66a8ae2bc71c16db181f8848e37c4eab8f024149e34df051348",
+        "matches_final_application": true
+      },
+      "FLUX-DELTA-SYSTEM-UI-application.bin": {
+        "bytes": 4319456,
+        "sha256": "d873c6e66bf6c66a8ae2bc71c16db181f8848e37c4eab8f024149e34df051348",
+        "matches_final_application": true
+      }
+    }
+  },
+  "source_commit": "1c32d08095d81a9d41a2ca5db1d98727ae59fa4c"
+}

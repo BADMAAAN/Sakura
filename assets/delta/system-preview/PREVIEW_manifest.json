@@ -1,0 +1,407 @@
+{
+  "data_provenance": "HOST SIMULATION / PREVIEW fixtures; not device screenshots or detected devices",
+  "native_size": [
+    320,
+    170
+  ],
+  "keyboard": "production drawDeltaKeyboard template and keysets extracted verbatim",
+  "confirmation_and_error": "production rendering blocks extracted verbatim",
+  "cpu_timings": {
+    "settings": {
+      "mean_microseconds": 208.0,
+      "iterations": 500
+    },
+    "files-long": {
+      "mean_microseconds": 238.0,
+      "iterations": 500
+    },
+    "files-empty": {
+      "mean_microseconds": 196.0,
+      "iterations": 500
+    },
+    "dialog": {
+      "mean_microseconds": 200.0,
+      "iterations": 500
+    },
+    "progress": {
+      "mean_microseconds": 182.0,
+      "iterations": 500
+    },
+    "keyboard-masked": {
+      "mean_microseconds": 56.0,
+      "iterations": 500
+    },
+    "wifi": {
+      "mean_microseconds": 68.0,
+      "iterations": 500
+    },
+    "ble": {
+      "mean_microseconds": 60.0,
+      "iterations": 500
+    },
+    "rfid": {
+      "mean_microseconds": 50.0,
+      "iterations": 500
+    },
+    "rf-pulse-timing": {
+      "mean_microseconds": 14.0,
+      "iterations": 500
+    },
+    "rf-square-wave": {
+      "mean_microseconds": 14.0,
+      "iterations": 500
+    },
+    "terminal-style": {
+      "mean_microseconds": 44.0,
+      "iterations": 500
+    },
+    "long-disabled-checked": {
+      "mean_microseconds": 218.0,
+      "iterations": 500
+    },
+    "radio-empty": {
+      "mean_microseconds": 16.0,
+      "iterations": 500
+    },
+    "storage-error": {
+      "mean_microseconds": 218.0,
+      "iterations": 500
+    },
+    "keyboard-hex": {
+      "mean_microseconds": 32.0,
+      "iterations": 500
+    },
+    "keyboard-numeric": {
+      "mean_microseconds": 30.0,
+      "iterations": 500
+    },
+    "keyboard-shifted": {
+      "mean_microseconds": 96.0,
+      "iterations": 500
+    },
+    "rf-rssi-history": {
+      "mean_microseconds": 54.0,
+      "iterations": 500
+    },
+    "rf-frequency-bins": {
+      "mean_microseconds": 56.0,
+      "iterations": 500
+    }
+  },
+  "captures": [
+    {
+      "file": "PREVIEW_dark-sakura_settings_320x170.png",
+      "sha256": "5177157d919b41d5e76b51831561bae61063c90ac4955a679a64ba3fc0e0ff09",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_dark-sakura_files-long_320x170.png",
+      "sha256": "fcf42660f20769ac7ab344c3fe953b253303703fe024900c4903df45aa531404",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_dark-sakura_files-empty_320x170.png",
+      "sha256": "080c62cb5ef9992b8d2a2bef15a1ebf620991ebc337a10850bbc63a894f9174a",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_dark-sakura_dialog_320x170.png",
+      "sha256": "905faa31441fc7ac2da48e298d6957a836d08d9edd8557e38d825702e43dec83",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_dark-sakura_progress_320x170.png",
+      "sha256": "e6ecb6aa5b0546e8a97bbbba95616fa73464c036484cb9f3107610c17566ad08",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_dark-sakura_keyboard-masked_320x170.png",
+      "sha256": "b0e8cc35682095e555457a8dbde0881a6f08e2d843d6fcffeb7f8396fc4e4191",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_dark-sakura_wifi_320x170.png",
+      "sha256": "d3eeaa575a8a75656e39303fdfe53bc6899f32bece08a6a4b776af7aae83ab0e",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_dark-sakura_ble_320x170.png",
+      "sha256": "377d71a2e86eeb92daedda7c26fdd7065ed0796dc5cd722d016659ebf87a2b72",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_dark-sakura_rfid_320x170.png",
+      "sha256": "f3af49a5fa49bfb0cf936fb78b3f6e1219189458e7bcd4d394e26e551d527a12",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_dark-sakura_rf-pulse-timing_320x170.png",
+      "sha256": "dc2248dd2292290dd9700cb66791c8ab50332dd07a2992c64d478714fa691e75",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_dark-sakura_rf-square-wave_320x170.png",
+      "sha256": "6df78bf89b1ff635e41032cef4ea1f7d423a9cc17bd0d3a7ef6e5a8e82c0cd48",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_dark-sakura_terminal-style_320x170.png",
+      "sha256": "eb63d2401f4b4404c60b95e4e4c94ab13e5de732a60f3f53c06c61f50703ae16",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_dark-sakura_long-disabled-checked_320x170.png",
+      "sha256": "e26ee7628bab471aba7a1542c5fd6da09321bd1bc0dd4415eb25b501edfcc3bb",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_dark-sakura_radio-empty_320x170.png",
+      "sha256": "fdfc6ca1262b1c956b736685a1e31da2062fce25c71a2a2e2b4df56efa130ffa",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_dark-sakura_storage-error_320x170.png",
+      "sha256": "e871ad475747ebebeef06733f8d6884345a435b5dd1e6d19b1b088910492618c",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_dark-sakura_keyboard-hex_320x170.png",
+      "sha256": "85895240d77367cebba92c1464013d493efc5e55fe242545512b46f6016e8fac",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_dark-sakura_keyboard-numeric_320x170.png",
+      "sha256": "952a180debac0fea69ddc40e8ff4b11274a5a5b5c5008d76a2e10b4fe3b295be",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_dark-sakura_keyboard-shifted_320x170.png",
+      "sha256": "90d744b8fce3069635eaa0a20555f10a570d58ad8df57bb9eed2e6e2df2ee7be",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_dark-sakura_rf-rssi-history_320x170.png",
+      "sha256": "e60eec7b099db5776c60129bc665ae882dd6b1e8cb819c4ca515249b43dac12b",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_dark-sakura_rf-frequency-bins_320x170.png",
+      "sha256": "833d173bcb6fdb8a9302cc427b5d4ea63b6c7ac5e123df8f48f95e89bd58b09a",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_sakura-dawn_settings_320x170.png",
+      "sha256": "49a47d9979fa9c23f6b635c7d3689cb48e1ee25ed338ea664701b90bb03c6378",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_sakura-dawn_files-long_320x170.png",
+      "sha256": "1f7320ff83bcf0671eaa54a983722ceba983883759732356ae2296d835a64227",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_sakura-dawn_files-empty_320x170.png",
+      "sha256": "79332d8ba58dfc58ade471205566cfe2120af29a343d0b38b079684106b5c3cf",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_sakura-dawn_dialog_320x170.png",
+      "sha256": "c9eb710d65cd1d13e019809677a738d98943f962a510901e90b7b679fe1bf72c",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_sakura-dawn_progress_320x170.png",
+      "sha256": "a62ccaa55436277129495ecf4e96a740f2d9e5e2c3182a1115f3249534b13dda",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_sakura-dawn_keyboard-masked_320x170.png",
+      "sha256": "486afc944dbab978ccaf0180a52f7ab9c86e053eb72eab849207c22138aeb789",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_sakura-dawn_wifi_320x170.png",
+      "sha256": "d92b9321e9ceb5f50e21acb328da93d56071707ed927b8444737b4f4510124c9",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_sakura-dawn_ble_320x170.png",
+      "sha256": "3103ccd95133eede0842b3772c1c18e3296dcf65c778b487c508e30283495996",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_sakura-dawn_rfid_320x170.png",
+      "sha256": "a23cc26aafe2f48724909fa29e9eccb19b0aa75e8a541aa542d1e0ee3949b5d0",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_sakura-dawn_rf-pulse-timing_320x170.png",
+      "sha256": "3804a5d2b04561ee0bf85cd4582e30a5824cd434a6f97fe06e0987bc1aae8749",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_sakura-dawn_rf-square-wave_320x170.png",
+      "sha256": "5da1ddd6b24e619da9f748bea13d407a5b0aeabc6ee8e22f10219f0655f3f00c",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_sakura-dawn_terminal-style_320x170.png",
+      "sha256": "01d06e835d204252058cadf681a477735711318c8ba9fb9070cf84f42b06d5b3",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_sakura-dawn_long-disabled-checked_320x170.png",
+      "sha256": "dd97187de8d0927b962d2141e930c06cff8bbd18eae5a074f76fb7f96f214b94",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_sakura-dawn_radio-empty_320x170.png",
+      "sha256": "7cece07611d4ada3a1dc3260b881628685bb27b22a9506fa275540a58bdf8f47",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_sakura-dawn_storage-error_320x170.png",
+      "sha256": "6f09a5a3d6e780073109920bc725ca2304021d3236b3485258b3cce0af1b5a4b",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_sakura-dawn_keyboard-hex_320x170.png",
+      "sha256": "cfa1b06329b54733a13368afa124bb1536c6405ef2594ec90802c1007b89f3b7",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_sakura-dawn_keyboard-numeric_320x170.png",
+      "sha256": "5774bb73c70263a4f9ed070533e9d14b7719d5d629eb672e38afaa369e071c53",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_sakura-dawn_keyboard-shifted_320x170.png",
+      "sha256": "61d3d16173cfe1db3162eda79446d27d7fd9e60f1773e7af7ca23e07bd6ef8c5",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_sakura-dawn_rf-rssi-history_320x170.png",
+      "sha256": "24b5d9d6b9450d930e0049322f1f33cf8a5b1d328f6bce6050b864d0700db255",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_sakura-dawn_rf-frequency-bins_320x170.png",
+      "sha256": "abee446e5d2f52110e41807ff4e6beecfd694c4f1050402d56fbe8677f30ea6c",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_monochrome_settings_320x170.png",
+      "sha256": "da1b1bb90a987e8832256c721b39bede5bb5d601d12779fceed3eff2191e2d74",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_monochrome_files-long_320x170.png",
+      "sha256": "d024b04857bb8955819940e14ed13545e1861352c4d67c09d293dff87fb69b1c",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_monochrome_files-empty_320x170.png",
+      "sha256": "6c51e138d5d8448e564024a485cb3c50eae81b5fd277a95476541b227164253b",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_monochrome_dialog_320x170.png",
+      "sha256": "a419146020fa29c902ad38a9655cda3d3c19a54e9b8766fa710b4e9d30f7302d",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_monochrome_progress_320x170.png",
+      "sha256": "a364b1e06d0752cd575ea6cac59ced2aa8ac526f835583cb6015f61850e100e1",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_monochrome_keyboard-masked_320x170.png",
+      "sha256": "ea48fc31214b9d533a98a22089a8e4c94c98821c87100de09b8b3f2794898f40",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_monochrome_wifi_320x170.png",
+      "sha256": "a18cae8fc501d84afaa5f0cece3e3f976efd09024dde9d3dc206884d78b7ae51",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_monochrome_ble_320x170.png",
+      "sha256": "008ba6d56ef30a0fcf5508f0f8a8bc92a0184d2cf1bda2708be9e4a839379b4a",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_monochrome_rfid_320x170.png",
+      "sha256": "503330f2bcadf14da6fcd7afd3b928330b1a5596c1ac95428106f62d2d85ce1d",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_monochrome_rf-pulse-timing_320x170.png",
+      "sha256": "2db7ff0ef96020b1280d38be8db6e474e9222f22a1151418fd6660b801e43100",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_monochrome_rf-square-wave_320x170.png",
+      "sha256": "11950944263d5a7e9b243399cbba67f2ae790ae92945b39b0c6b26cb39600267",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_monochrome_terminal-style_320x170.png",
+      "sha256": "ca5ea72b3fabe3e3ee9031976a1a5827edbf940b258b6c9720e4939ecbcc157e",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_monochrome_long-disabled-checked_320x170.png",
+      "sha256": "2d33ceafa945194c20b281f47636d752d9b4e637f9d1397a8a3ac285b3b0e94b",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_monochrome_radio-empty_320x170.png",
+      "sha256": "e1b57a45ea70103156b2c8b7af1eab1f85400f06d522285062d1b69cb5de2799",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_monochrome_storage-error_320x170.png",
+      "sha256": "c08d99ddf0d7c0b1e025a473e022e8c9371c98a0886b9318d03e0907f61d0575",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_monochrome_keyboard-hex_320x170.png",
+      "sha256": "f44634fa2e3d7e3642727e1580f38c6fec86f46b2cf8cef80c7cdf7d263a5717",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_monochrome_keyboard-numeric_320x170.png",
+      "sha256": "321bbbc5d73b01151eda3990daadd7395d77a3d295358e786d739aa7084776ed",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_monochrome_keyboard-shifted_320x170.png",
+      "sha256": "236388401c7ca05b7673945cf93b983b22c9f1b8b86319822ab22c4b262d9ebe",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_monochrome_rf-rssi-history_320x170.png",
+      "sha256": "24e92faed59aace9640eebfac4a366a5f39afd64aaba093a3938d54fe9efdb8a",
+      "provenance": "HOST SIMULATION"
+    },
+    {
+      "file": "PREVIEW_monochrome_rf-frequency-bins_320x170.png",
+      "sha256": "8c529849e36892a30e77e4ae2796fca5f8622b8d6239ed02d8d5a0251d6c9ff3",
+      "provenance": "HOST SIMULATION"
+    }
+  ],
+  "source_sha256": {
+    "include/delta/widgets.h": "888a1d85c8e4782219e012267daedf0408d7fa05afb444041a54978a65caaf9a",
+    "include/delta/instruments.h": "8319d8e49ac47809a041d71974826dc4318ffb867298d487350b7bb941346800",
+    "include/delta/rf_graph.h": "c2914271e88061e537ce0784f29fd308c4c6cad6d798041a36b38da512b5cb50",
+    "include/delta/core.h": "964668295840fcfd71a5ad1c1d8c94e63a71695e7b1eda33ef9efa9415d9b8b0",
+    "src/core/mykeyboard.cpp": "30f1b80ec906c42a2d1ff1de7ad4952b97bc10ab8ccee9f718ed44ca7ca325c8",
+    "src/core/display.cpp": "68302bb870b1c414e910c5a6db43b8db3e566b5e1e520fec596162deca1622d2",
+    "src/core/delta_ui.cpp": "2717692fffa7d4edb1ac5ed4cb172ee4af23c77d661d1b4ad8054abdcdddb09b",
+    "src/modules/rf/rf_spectrum.cpp": "767b4fea5c055f218f4e2dd6f84f60fca0283efd1d8462505540f700e868af81",
+    "src/core/tftLogger/tftLogger.cpp": "21253fc5e664745462a2585709f3d578168db33faac5e89442fe7695259faf46",
+    "tools/delta_preview/system.cpp": "bdf9f0c57d9c1c90f3fd989d50363ad9f50e6d1a3d2524ead37af62adcdfb1bc"
+  },
+  "timing_limit": "Host CPU rendering only. Excludes firmware, LCD transfer, image encoding. Not device FPS or latency.",
+  "python": "3.14.7"
+}

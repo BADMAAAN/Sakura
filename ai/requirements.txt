@@ -1,0 +1,3 @@
+# AI infrastructure only; firmware dependencies remain in the PlatformIO project.
+litellm[proxy]==1.98.0
+aider-install==0.2.0

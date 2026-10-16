@@ -1,0 +1,10 @@
+# Supervisor configuration; paths are resolved relative to FLUX_ROOT.
+heartbeat_seconds: 30
+stall_seconds: 1800
+cooldown_seconds: 300
+max_attempts_per_executor: 2
+executor_order: [codex, aider]
+optional_backends: [openhands]
+primary_model: qwen2.5-coder:14b
+reviewer_model: qwen2.5:14b
+model_fallback: [qwen2.5:14b, qwen2.5:latest]

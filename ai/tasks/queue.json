@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "tasks": [
+    {
+      "id": "ai-infrastructure-001",
+      "title": "Build fault-tolerant autonomous AI infrastructure",
+      "description": "Implement and verify Supervisor, executor failover, persistent state, checkpoints, lock, watchdog and documentation.",
+      "acceptance_criteria": ["single-task queue", "Codex/Aider failover", "OpenHands optional only", "persistent recovery", "deterministic tests", "documented safety limits"],
+      "dependencies": [], "status": "done", "executor_attempts": {"codex": 2, "aider": 2}, "model_attempts": {"qwen2.5-coder:14b": 2},
+      "build_required": false, "tests_required": true, "review_required": true, "commit_allowed": true
+    },
+    {
+      "id": "flux-next-safe-triage",
+      "title": "Finish FLUX v0.1 rebranding build",
+      "description": "Bring the existing full-rebranding FLUX build to GREEN, run tests and reviewer, checkpoint and commit without adding features.",
+      "acceptance_criteria": ["FLUX build green", "tests green", "reviewer pass", "checkpoint", "local commit"],
+      "dependencies": ["ai-infrastructure-001"], "status": "in_progress", "executor_attempts": {}, "model_attempts": {},
+      "build_required": true, "tests_required": true, "review_required": true, "commit_allowed": true
+    }
+  ]
+}

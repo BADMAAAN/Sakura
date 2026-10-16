@@ -1,0 +1,150 @@
+{
+  "role": "anti-ui-slop-reviewer",
+  "task_id": "system_ui_visual",
+  "status": "PASS",
+  "summary": "PASS for the reviewed host-rendered UI only. All three initial readability findings are closed in fresh captures. Shared RF frequency/history rendering now has readable axes, units and peak labels. Physical LilyGO GUI, live data acquisition, motion and earlier RF-image fidelity remain NOT TESTED.",
+  "review_scope": "Rendered local PNG evidence; production/assets read-only. No browser or device control.",
+  "reference": {
+    "available": "User's written design clarification: deep black/graphite, plum/pink/violet accents, legible instrument graphs, compact information panels, actual module data, encoder control.",
+    "unavailable": "Earlier RF reference image is absent from accessible attachments; no pixel comparison claimed. Home is outside the supplied new contact sheets."
+  },
+  "evidence": {
+    "manifest": "assets/delta/system-preview/PREVIEW_manifest.json",
+    "contact_sheets": [
+      "assets/delta/system-preview/PREVIEW_CONTACT_SHEET_dark-sakura.png",
+      "assets/delta/system-preview/PREVIEW_CONTACT_SHEET_sakura-dawn.png",
+      "assets/delta/system-preview/PREVIEW_CONTACT_SHEET_monochrome.png"
+    ],
+    "native_images": 60,
+    "provenance": "HOST SIMULATION / PREVIEW fixtures; not screenshots from LilyGO and not real detected networks/cards/signals.",
+    "shared_renderer": "Lists, radioResults, rfidCard and rfGraph frequency/RSSI-history use shared C++ pixels. Production rf_CC1101_rssi calls rfGraph. Keyboard, confirmation and status blocks are extracted from production by the preview tool.",
+    "reconstructions": "RF PULSE TIMING, square wave and terminal preview are manual reconstructions, excluded from production-geometry acceptance. Pulse timing is no longer named as a frequency spectrum.",
+    "source_manifest_note": "At retry, capture hashes and renderer-header source hashes all match. The only source-hash drift is src/modules/rf/rf_spectrum.cpp; root disclosed a post-capture range-data reset change. Root will regenerate the manifest/captures after production freeze. This review does not certify that later final manifest."
+  },
+  "findings": [
+    {
+      "id": "V1",
+      "severity": "P2",
+      "type": "objective_readability",
+      "requirement": "Legible compact information panels and polished dialogs on 320x170.",
+      "evidence": "PREVIEW_dark-sakura_dialog_320x170.png (also Dawn/Monochrome): normal word 'screen?' splits into 'scree' and 'n?' on the next otherwise empty line.",
+      "location": "include/delta/widgets.h:106 messageLines; production confirmation calls it from src/core/display.cpp.",
+      "impact": "Character-based wrapping interrupts ordinary language and makes short confirmations harder to scan.",
+      "smallest_correction": "Wrap on the last fitting whitespace; use hard wrapping only when a single token exceeds the line width. Preserve explicit newlines and all characters.",
+      "reproduction": "Regenerate the existing dialog fixture and inspect its second line. Add a tiny runnable check for a fitting multiword string and an oversized token.",
+      "state": "CLOSED",
+      "resolution": "Fresh dialog captures in all three themes place the whole word 'screen?' on line two; no split inside that word. messageLine regression assertions exist for whitespace wrapping and an oversized token (inspected, not run by visual reviewer)."
+    },
+    {
+      "id": "V2",
+      "severity": "P2",
+      "type": "objective_data_readability",
+      "requirement": "Wi-Fi must be a functional analyzer of networks and signal levels; BLE must clearly show device characteristics using actual data.",
+      "evidence": "PREVIEW_dark-sakura_wifi_320x170.png and PREVIEW_dark-sakura_ble_320x170.png: the AP/CHANNEL and RSSI SNAPSHOT histograms have bars but no channel or dBm bin labels or count scale. The selected dBm value and row channels are visible separately.",
+      "location": "include/delta/instruments.h:37-46 radioResults.",
+      "impact": "Users cannot assign a channel/RSSI range to a bar or interpret its relative count quantitatively. The extra panel has less informational value than its instrument styling suggests.",
+      "smallest_correction": "Add sparse readable channel ticks (such as 1/7/14), BLE bin range labels and a compact count maximum, or replace the histogram with labeled selected-device metadata. Keep values derived from the scan snapshot; no synthetic history.",
+      "reproduction": "Use current Wi-Fi channels 6/11/6 and BLE -73/-48/-91 fixture; verify each occupied bin can be identified at native size.",
+      "state": "CLOSED",
+      "resolution": "Fresh Wi-Fi histogram shows channel ticks 1/7/14 and AP/CH max 2; BLE shows -110/-68/-32+ and RSSI max 1. Sparse labels fit without overlap and identify the bins/count scale at native size."
+    },
+    {
+      "id": "V3",
+      "severity": "P2",
+      "type": "objective_contrast",
+      "requirement": "Preserve readability on the physical compact display across supported themes.",
+      "evidence": "Sakura Dawn muted text over the selected-row focus fill measures 4.08:1 after RGB565 quantization. Main text/focus is 9.27:1. This affects selected radio metadata and values rather than intentionally disabled controls.",
+      "location": "include/delta/widgets.h:8 palette(Theme::SakuraDawn).",
+      "impact": "Small secondary values have weaker contrast than the 4.5:1 normal-text review threshold.",
+      "smallest_correction": "Slightly darken Dawn muted text, or use the primary text token for secondary values when their row is selected.",
+      "reproduction": "Calculate RGB565-decoded relative luminance for muted (105,88,101) against focus (222,199,211); inspect selected Wi-Fi/Settings values in the fresh Dawn capture.",
+      "state": "CLOSED",
+      "resolution": "Dawn muted token changed to (98,78,93). Recomputed after RGB565 quantization: muted/focus 4.82:1, muted/background 6.29:1. Fresh Dawn selected metadata is darker and unobstructed."
+    }
+  ],
+  "passed_observations": [
+    "Dark Sakura uses deep graphite with restrained pink/plum focus treatment; tool panels are visually distinct from the artistic Home direction described by the user.",
+    "Wi-Fi and BLE combine three compact result rows with selected RSSI and metadata; RFID presents a card surface, UID and protocol fields. They are not reduced to plain text lists.",
+    "Visible list selection has both a filled surface and an accent marker; checked/toggle states use shape as well as color.",
+    "Long file names and title strings use ellipsis without visible overlap. Folder icons, values and actions remain aligned.",
+    "Masked keyboard field, caret, shifted keys, numeric/hex grids, progress, empty scan/folder and storage-error states are present and visually distinguishable in the host captures.",
+    "Quiet work backgrounds keep the Sakura artwork subordinate to content. No unrelated template panels or decorative content were observed.",
+    "All 60 refreshed native captures match their manifest SHA256 and are exactly 320x170; 60 corresponding 4x images exist.",
+    "Shared RF frequency-bin and RSSI-history plots show a visible data trace, subtle grid, -20/-50/-80/-110 RSSI scale, frequency endpoints or chronological direction, measured-sample count, and labeled peak. Fresh Dark Sakura, Dawn and Monochrome captures show no visible clipping or overlap."
+  ],
+  "checks": [
+    {
+      "name": "Contact-sheet inspection",
+      "executed": true,
+      "result": "All three refreshed theme contact sheets inspected."
+    },
+    {
+      "name": "Targeted fresh detailed inspection",
+      "executed": true,
+      "result": "Fresh dialog, Wi-Fi and BLE 4x captures; shared RF frequency/history 4x captures; native Dawn/Monochrome frequency captures inspected. V1-V3 CLOSED."
+    },
+    {
+      "name": "Native capture dimensions and hashes",
+      "executed": true,
+      "result": "60/60 pass."
+    },
+    {
+      "name": "Renderer-source provenance hashes",
+      "executed": true,
+      "result": "widgets.h, instruments.h, rf_graph.h, core.h and other captured render sources match manifest. Only rf_spectrum.cpp differs after root-disclosed post-capture data-reset change; final recapture remains root-owned."
+    },
+    {
+      "name": "RGB565 palette contrast",
+      "executed": true,
+      "result": "Dark Sakura text/bg 15.15, muted/bg 6.72, muted/focus 5.39; Dawn text/bg 12.09, muted/bg 6.29, muted/focus 4.82; Monochrome text/bg 16.05, muted/bg 7.34, muted/focus 5.17."
+    },
+    {
+      "name": "Device GUI and encoder",
+      "executed": false,
+      "result": "NOT TESTED: root owns device control and must collect final physical confirmation."
+    },
+    {
+      "name": "Animation, refresh latency and smooth metrics",
+      "executed": false,
+      "result": "NOT TESTED: static PNGs cannot demonstrate temporal behavior."
+    },
+    {
+      "name": "Original RF reference fidelity",
+      "executed": false,
+      "result": "NOT TESTED: original reference image unavailable."
+    },
+    {
+      "name": "RF frequency/history rendering",
+      "executed": true,
+      "result": "PASS for host geometry/readability using the shared production rfGraph renderer with clearly declared fixture data. Physical CC1101 operation and actual measured spectra NOT TESTED."
+    }
+  ],
+  "limits": [
+    "No image proves actual hardware transfer, backlight contrast, renderer integration, actual measured signals, live refresh, or encoder behavior.",
+    "ASCII fallback for unsupported UTF-8 is visibly tested as question marks; complete Unicode rendering is not claimed.",
+    "Earlier Home approval and prior device behavior are context, not newly executed verification.",
+    "Final capture/manifest regeneration after production freeze is pending in root scope; later changes require root to preserve reviewed renderer pixels or seek new evidence."
+  ],
+  "changed_files": [
+    ".codex/ui-system/visual-review.json"
+  ],
+  "next_handoff": {
+    "implementer": "No visual fixes remain from V1-V3. No production edits made by reviewer.",
+    "tester": "Root regenerates final capture manifest after production freeze, then verifies physical nested UI/encoder response and safe observed rendering on LilyGO. No radio traffic was initiated by this review.",
+    "reviewer": "One targeted retry consumed. Host-only visual acceptance complete; retain physical, temporal, reference-image and manual-reconstruction limitations in final report."
+  },
+  "tools_used": [
+    "functions.exec",
+    "exec_command",
+    "view_image",
+    "apply_patch",
+    "collaboration.send_message"
+  ],
+  "skills_used": [
+    "ui-ux-pro-max",
+    "agent-skills:frontend-ui-engineering"
+  ],
+  "duration_seconds": 540,
+  "retries": 1,
+  "duration_precision": "Approximate cumulative review time across initial review and targeted retry."
+}

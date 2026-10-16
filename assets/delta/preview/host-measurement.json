@@ -1,0 +1,7 @@
+{
+  "renderer_mean_microseconds": 21.0,
+  "iterations": 1000,
+  "platform": "win32",
+  "hardware_fps": "NOT MEASURED",
+  "note": "CPU render only. Excludes LCD SPI, firmware work, image encoding and browser."
+}

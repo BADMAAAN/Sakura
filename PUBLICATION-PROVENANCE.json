@@ -1,0 +1,90 @@
+{
+  "source_commit": "50518d5964fc1c1006b491286019e341fd59507a",
+  "source_root_commits": [
+    "2ef8b25f5d6bd2aa6ac2109d1eaa7970c1036a28"
+  ],
+  "source_tree": "321b31efec1eccdceacdee674a7a9965fcf0f74d",
+  "source_file_count": 1949,
+  "executable_source_paths": [
+    "lib/TFT_eSPI_QRcode/keywords.txt"
+  ],
+  "source_has_uncommitted_changes": false,
+  "source_rule": "Tracked HEAD bytes only; working-tree edits, original Git history and ignored files are not exported.",
+  "exclusions": [
+    {
+      "path": "ai/context/baseline-build-1.log",
+      "reason": "Generated local build log"
+    },
+    {
+      "path": "ai/context/baseline-build-clean.log",
+      "reason": "Generated local build log"
+    },
+    {
+      "path": "ai/context/baseline-build-cold.log",
+      "reason": "Generated local build log"
+    },
+    {
+      "path": "ai/context/flux-identity-build-retry-2.log",
+      "reason": "Generated local build log"
+    },
+    {
+      "path": "ai/context/flux-identity-build-retry.log",
+      "reason": "Generated local build log"
+    },
+    {
+      "path": "ai/context/flux-identity-build.log",
+      "reason": "Generated local build log"
+    },
+    {
+      "path": "ai/context/flux-identity-upstream-regression.log",
+      "reason": "Generated local build log"
+    },
+    {
+      "path": "ai/context/reliability-bruce-regression.log",
+      "reason": "Generated local build log"
+    },
+    {
+      "path": "ai/context/reliability-flux-build.log",
+      "reason": "Generated local build log"
+    },
+    {
+      "path": "media/pictures/nfc.gif",
+      "reason": "Visible RFID UID uncertainty; optional documentation/demo media"
+    }
+  ],
+  "resource_zip_policy": "Audited inherited PCB, theme and SSID resource ZIPs retained; generated source/release archives excluded.",
+  "original_repository_preserved": true,
+  "new_blob_scan_base": "837aecc70dced15d64d190180fdd9ee3ece770b2",
+  "new_objects_scanned": 112,
+  "new_secret_signature_findings": [],
+  "remote_read_only_check": {
+    "url": "https://github.com/BADMAAAN/Sakura.git",
+    "exit_code": 0,
+    "empty": true,
+    "ref_count": 0,
+    "refs_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status": "PASS",
+    "raw_output_omitted": true
+  },
+  "publication_approved": true,
+  "clean_initial_history_approved": true,
+  "checked_utc": "2026-10-16T05:16:13.106935+00:00",
+  "presentation": {
+    "date": "2026-10-16",
+    "language": "Russian primary, full matching English",
+    "source_preservation": "runtime/source/dependencies/hardware and licenses byte-exact",
+    "source_files_rechecked": 929,
+    "validation": "114 tests PASS in configured source environment; clean snapshot tooling/history limitations documented",
+    "graphics": "approved cyber-reference.png; 7 optimized images, production host renderer with synthetic states",
+    "reviews": [
+      "design research and RU/EN editor",
+      "graphics implementer",
+      "source publication reviewer",
+      "privacy reviewer",
+      "independent visual reviewer"
+    ],
+    "workflow_policy": "inherited workflows and FUNDING archived outside active .github configuration",
+    "authorization": "User requested this verified first push; no force push, firmware binaries, complete ZIP or release",
+    "checked_utc": "2026-10-16T05:22:10.897774+00:00"
+  }
+}

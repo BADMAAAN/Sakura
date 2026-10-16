@@ -1,0 +1,119 @@
+{
+  "date": "2026-10-16",
+  "source_revision": "50518d5964fc1c1006b491286019e341fd59507a",
+  "banner": {
+    "source": "assets/delta/cyber-reference.png",
+    "source_sha256": "85a88ba083a543d16801abf81c0b8ac2d2fc15e874dd045c351cbf0cadc6a73d",
+    "original_dimensions": [
+      1672,
+      941
+    ],
+    "crop_box": [
+      0,
+      130,
+      1672,
+      799
+    ],
+    "operations": "Wide crop retaining large left tree, right moon, mountains and lake; proportional resize to 1440x576, JPEG export; no new art or lettering"
+  },
+  "screens": {
+    "kind": "host preview / production shared C++ renderers / synthetic demonstration state",
+    "native_dimensions": [
+      320,
+      170
+    ],
+    "export_dimensions": [
+      640,
+      340
+    ],
+    "adapter": "headless capture.cpp calls delta::render, delta::ui::wifiMain, modeList and tamagotchi from current production headers",
+    "status": "Unknown clock and battery on menu screens; Tamagotchi uses synthetic zero counters, channel 1, existing mood strings. No actual radio readings, SSIDs, MACs, credentials or SSH host records.",
+    "limitations": "No physical LilyGO validation; no hardware handlers run. Scene labels and menu entries come from current firmware. Navigation image is selected Config state, not animation."
+  },
+  "firmware_hookup": [
+    "tools/delta_preview/generate_artwork.py: cyber-reference.png -> indexed artwork.h",
+    "include/delta/core.h: renderBackground uses artwork::background and palettes",
+    "src/core/delta_ui.cpp: prepareBackground(true) and deltaUiTick present background plus overlay",
+    "src/modules/pwnagotchi/ui.cpp: calls delta::ui::tamagotchi"
+  ],
+  "artwork_verification": {
+    "result": "PASS",
+    "background_pixels_compared": 54400,
+    "palette_entries_compared": 64,
+    "method": "Reproduce current generator resize, shadow gain, quantization and RGB565 encoding from cyber-reference.png; compare exact current artwork.h background and palette0 arrays"
+  },
+  "production_header_sha256": {
+    "include/delta/artwork.h": "b7a79842019ed14182e02e3e5e187daba7e43b60d720d6d676f4f937bbfd9889",
+    "include/delta/ble_surface.h": "c4adb9a0d76dfd96e8b937b60ffcebc81c3e2fd074a6a2b868d745a66c45c346",
+    "include/delta/button_input.h": "333cc26874bd944e76a2046335a900c9bfd6218774f0cbeea5f511956cea0abd",
+    "include/delta/core.h": "7553d86a216ea3da3278822e4188ab388ddbf251af5aca8f17fedc4479826fdc",
+    "include/delta/dirty.h": "fb2c35b143c7ef55ba20ad945749c382a8cf5ab61e4efaff87dcd8ad33a17f63",
+    "include/delta/instruments.h": "a7490722a6db350f91316204b82506a2539992189805cda2e5ef335f67f8e6c7",
+    "include/delta/quick_access.h": "ff834ac51d3ea3e32e782ba9252f9425e4fc0955131675f46b81a7e6883829fa",
+    "include/delta/rf_graph.h": "b182fd60c0a8c69568ae15c4a4051fa80916f86691c8a8c65b092ccde598505f",
+    "include/delta/section_ui.h": "a1cf0c35a28149c3a71f5dd6d109e94392c89a3636c40f218ed1feb471504c56",
+    "include/delta/settings.h": "6ce0cc5ac8fa15aa6d714b2312c9e00af25734fe83f86c5919811d0c1d7525dc",
+    "include/delta/tamagotchi_ui.h": "61124a6b3f56ce35c85c401c5b23cfb33cbb3217294f71d0dd9d75d51e74de90",
+    "include/delta/typography.h": "50dc6c1a990ccef198c1a8c3551c780e62e0bdb45aed95357460568faa0df304",
+    "include/delta/typography_data.h": "583f2fc50fbecb2c23527fc0ca4b299fa1956a3bc228b67c1ce4279281a8a4dd",
+    "include/delta/widgets.h": "14717392ddc8dd49228653eb6015d354bc7b20b11e4fa1bf8a741f59e8b59df8"
+  },
+  "files": {
+    "host-home.png": {
+      "sha256": "f36b776c855fcd2a5084eebd360d6d439f58d058b8195c3be2bb994e0d6efd74",
+      "bytes": 43744,
+      "dimensions": [
+        640,
+        340
+      ]
+    },
+    "host-navigation.png": {
+      "sha256": "cfe176b256d60d7094b457c721499e74ad7b32130142df6317ed56c8831aa544",
+      "bytes": 45145,
+      "dimensions": [
+        640,
+        340
+      ]
+    },
+    "host-settings.png": {
+      "sha256": "782195a212f5d04731bafb90e92d99f6b98ea7a1709820f9659e2b3bb0c8f2eb",
+      "bytes": 45870,
+      "dimensions": [
+        640,
+        340
+      ]
+    },
+    "host-ssh-profiles.png": {
+      "sha256": "bdd700d87179e3cafb5173c69f0d4d53f3f9f53241a206d9b0ecf0b5552d9ed8",
+      "bytes": 45323,
+      "dimensions": [
+        640,
+        340
+      ]
+    },
+    "host-tamagotchi.png": {
+      "sha256": "edf5e111666939ac377d349d51f6ae5ac8f894d7826fce4a563a1994245d4e6b",
+      "bytes": 43059,
+      "dimensions": [
+        640,
+        340
+      ]
+    },
+    "host-wifi.png": {
+      "sha256": "e2caa379602039739664ee3e984bb22919a1b1aa23e76264d66cebc8d87bcee6",
+      "bytes": 44871,
+      "dimensions": [
+        640,
+        340
+      ]
+    },
+    "sakura-banner.jpg": {
+      "sha256": "ae683cc256f5b333f29eb996ac445044672689ba367246a502305cd15af346f5",
+      "bytes": 192593,
+      "dimensions": [
+        1440,
+        576
+      ]
+    }
+  }
+}

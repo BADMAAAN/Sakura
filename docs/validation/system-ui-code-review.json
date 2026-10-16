@@ -1,0 +1,109 @@
+{
+  "role": "code_reviewer",
+  "task_id": "system_delta_review_final",
+  "status": "pass",
+  "summary": "Final review PASS, including additional BLE target, multi-target, SD and Scripts painters. Previously reported two P2 findings remain corrected. No unresolved regression blocker in reviewed changes.",
+  "evidence": [
+    {
+      "path_or_url": "src/core/delta_ui.cpp",
+      "finding": "Work text is owned across nested callbacks; views are populated after vector resize. Partial presentation uses full-width contiguous rows or one row at a time, preserving the 320-pixel stride. Frame/dimension/sleep guards checked."
+    },
+    {
+      "path_or_url": "src/core/display.cpp",
+      "finding": "Existing enabled-option selection and callback dispatch remain authoritative. Menu animation is tick-driven. Empty confirmation returns -1, Back cancels, and existing destructive config callers execute only choice == 1."
+    },
+    {
+      "path_or_url": "src/core/mykeyboard.cpp",
+      "finding": "Canvas rendering preserves original layout and action handlers. Masking changes only visible text. Existing encoder/key navigation remains authoritative."
+    },
+    {
+      "path_or_url": "src/core/scrollableTextArea.cpp",
+      "finding": "Empty/short buffers, clamped scrolling and glyph-width wrapping are covered by compiled production-function tests. Custom terminal geometry retains the legacy path."
+    },
+    {
+      "path_or_url": "src/core/tftLogger/tftLogger.cpp",
+      "finding": "Mapping preserves the 0x00ffffff transparency sentinel and leaves raw pixel/image data unchanged. Existing sleeping/renderTarget handling remains."
+    },
+    {
+      "path_or_url": "src/modules/wifi/clients.cpp",
+      "finding": "Review found only display layout and row count changes; protocol worker paths unchanged. Compact header obtains copied context and state via existing client lock helpers."
+    },
+    {
+      "path_or_url": "include/delta/artwork.h; src/core/delta_artwork.cpp",
+      "finding": "Firmware declarations use external linkage and one implementation unit. Host builds retain static header-only assets."
+    },
+    {
+      "path_or_url": "src/core/wifi/wifi_common.cpp; src/modules/ble/ble_common.cpp; src/modules/rfid/tag_o_matic.cpp; src/modules/rf/rf_spectrum.cpp; src/modules/rf/rf_waterfall.cpp; src/modules/ir/ir_read.cpp; src/core/settings.cpp",
+      "finding": "UI adapters use supplied scan/card/capture/clock data. Reviewed radio/control algorithms and existing safeguards are unchanged; no synthetic measurements introduced in reviewed paths."
+    },
+    {
+      "path_or_url": "src/core/delta_ui.cpp:278; src/modules/bjs_interpreter/globals_js.cpp:223",
+      "finding": "RESOLVED P2: runtime.main changes interpreter_state from 2 to 3 during JS_Call. Palette bypass now uses >=2, retaining explicit script drawing colours in both foreground states; compiled state-3 identity regression passed."
+    },
+    {
+      "path_or_url": "src/modules/ble/BLE_Suite.cpp:6568",
+      "finding": "RESOLVED P2: the new info viewer previously drew only its first 8 rows then dismissed on any detent, hiding 10-line DEVICE PROFILE fields. It now calls existing ScrollableTextArea::show() so wheel scrolling reaches every row and Select/Back dismisses."
+    },
+    {
+      "path_or_url": "src/core/display.cpp:786; src/core/scrollableTextArea.cpp:108",
+      "finding": "Encoder bursts cast to int64 before negation. Menu steps are bounded by enabledCount with positive wrap accounting; scrolling clamps a direct int64 target. INT32_MIN/MAX menu cases pass compiled production-loop tests."
+    },
+    {
+      "path_or_url": "include/delta/rf_graph.h; src/modules/rf/rf_spectrum.cpp:231",
+      "finding": "Final CC1101 graph uses actual tuned frequencies and acquired RSSI. Unmeasured entries remain absent, buffers reset on range changes, fixed-frequency history shifts only received samples. SPI sentinel and acquisition/delay order preserved in compiled actual-function test."
+    },
+    {
+      "path_or_url": "src/modules/ble/BLE_Suite.cpp; src/core/utils.cpp; include/delta/widgets.h",
+      "finding": "Final BLE common painters retain action handlers. Device storage metrics guard missing mounts and subtraction; unknown battery is explicit. Word wrapping remains bounded and preserves unsupported glyph fallback. Custom canvas/terminal geometry remains intentionally owned by existing modules."
+    },
+    {
+      "path_or_url": "src/modules/ble/BLE_Suite.cpp:107; src/modules/ble/BLE_Suite.cpp:4493; src/modules/ble/BLE_Suite.cpp:4646",
+      "finding": "Additional painter review PASS: snapshot scan/sort completes before cached RadioRows are built; reserved detail Strings keep c_str pointers stable, and no rows allocate per repaint. Actual RSSI/metadata retained. Multiselect marks guard checked-vector bounds, and counts use supplied rows/targets. Empty and unavailable canvas paths are safe."
+    },
+    {
+      "path_or_url": "src/modules/ble/BLE_Suite.cpp:3108; src/modules/ble/BLE_Suite.cpp:3253",
+      "finding": "SD and Scripts name pointers refer to immutable local String arrays that outlive the selection loop. Input/action tails for SD, Scripts, single-target and multi-target selectors are byte-identical to 6ade36dd after newline normalization."
+    }
+  ],
+  "changed_files": [
+    ".codex/ui-system/code-review.json"
+  ],
+  "checks": [
+    {
+      "command": "git diff 6ade36dd -- reviewed paths",
+      "result": "Inspected actual firmware routes and immediate callers, including config confirmation and serial/encoder dispatch."
+    },
+    {
+      "command": "C:\\Projects\\FLUX\\.venv\\Scripts\\python.exe -X utf8 -m unittest discover -s tests -p test_delta_*.py",
+      "result": "PASS: 7 tests in 12.063 s; compiled assertions cover DELTA and legacy common/input paths plus widget/instrument rendering guards."
+    },
+    {
+      "command": "python -X utf8 -m unittest test_delta_runtime test_delta_navigation test_delta_custom_chrome test_delta_rf_graph (PYTHONPATH=tests)",
+      "result": "Final independent verification PASS: 6 tests in 9.074 s. No full build or device operation run by reviewer."
+    },
+    {
+      "command": "python -X utf8 -m unittest test_delta_custom_chrome (PYTHONPATH=tests)",
+      "result": "Additional independent PASS: 2 tests in 1.931 s, including actual cached BLE rows, repeated draws, unknown RSSI and multiselect markers."
+    },
+    {
+      "command": "Read-only Python comparison of selector input/action tails against git show 6ade36dd",
+      "result": "PASS: identical normalized tails, respectively 944 / 2971 / 1601 / 1670 characters, for selectFileFromSD / getScriptFromUser / selectTargetFromScan / selectMultipleTargetsFromScan."
+    }
+  ],
+  "risks": [
+    "Physical screen appearance, hardware navigation, current firmware build and application-only flash were not run by this reviewer.",
+    "The atlas deliberately substitutes unsupported Unicode glyphs with '?'; source labels and actual keyboard values are retained.",
+    "PRESERVED BASELINE LIMITATION: selectMultipleTargetsFromScan has no successful confirmation exit; Next navigates and Esc clears/returns. Its action tail is unchanged and this presentation-only update does not claim to repair that pre-existing workflow."
+  ],
+  "open_issues": [],
+  "next_handoff": "Root: finish final firmware build, app-only verification and physical UI acceptance. No unresolved code-review blocker.",
+  "tools_used": [
+    "exec_command: git/read/rg",
+    "exec_command: host unittest",
+    "write_stdin: successful test completion",
+    "collaboration.send_message: review updates"
+  ],
+  "duration_seconds": 114,
+  "retries": 0,
+  "additional_review_duration_seconds": 47
+}
